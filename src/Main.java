@@ -26,12 +26,15 @@ public class Main {
         }
         System.out.println("---6 задание---");
         for (int t = 7; t < 100; t += 7) {
-            System.out.println(t);
+            System.out.print(t + " ");
         }
+        System.out.println();
+
         System.out.println("---7 задание---");
         for (int y = 1; y < 515; y *= 2) {
-            System.out.println(y);
+            System.out.print(y + " ");
         }
+        System.out.println();
         System.out.println("---8 задание---");
         int sallary = 29000;
         int months = 12;
@@ -44,7 +47,7 @@ public class Main {
         int sallaryB = 29000;
         int monthsB = 12;
         int moneyInBank = 0;
-        for (int month = 1; month < monthsB; month++) {
+        for (int month = 0; month < monthsB; month++) {
             moneyInBank = (moneyInBank + sallaryB) + (moneyInBank / 100 * 12);
             System.out.println("Месяц " + month + " сумма накоплений равна " + moneyInBank);
         }
