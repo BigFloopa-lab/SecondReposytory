@@ -1,65 +1,143 @@
+import java.time.Month;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("---1 задание---");
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i);
+        System.out.println("---1 task---");
+        int firstFriday = 5;
+        for (int day = 1; day >= 1 && day <= 31; day++) {
+            if ((day - firstFriday) % 7 == 0) {
+                System.out.println("Сегодня пятница, " + day + " число. Необходимо подготовить отчет");
+            }
+        }
+        System.out.println("---2 task---");
+        int distance = 42195;
+        int step = 500;
+        int covered = 0;
+        do {
+            covered += step;
+            int remained = distance - covered;
+            if (remained < 0) {
+                remained = 0;
+            }
+            System.out.println("Держитесь! Осталось " + remained + " метров");
+        } while (covered < distance);
+
+        System.out.println("---2.1 task---");
+        int distanceB = 42195;
+        int stepB = 500;
+        for (int coveredB = stepB; coveredB <= distanceB + stepB; coveredB += stepB) {
+            int remainedB = distanceB - coveredB;
+            if (remainedB < 0) {
+                remainedB = 0;
+            }
+            System.out.println("Держитесь! Осталось " + remainedB + " метров");
         }
 
-        System.out.println("---2 задание---");
-        for (int q = 10; q >= 1; q--) {
-            System.out.println(q);
+        System.out.println("---3 task---");
+        int budget = 500;
+        int prisePerDay = 100;
+        int totalDay = budget / prisePerDay;
+        int day = budget / prisePerDay;
+        System.out.println("С учетом внесенных средств вы можете отсавить машину на парковке на " + totalDay + " дней");
+
+        while (budget >= prisePerDay) {
+            totalDay = budget / prisePerDay;
+            budget -= prisePerDay;
+            if (totalDay % 5 == 0) {
+                System.out.println("Каждый пятый день на паркове бесплатный!");
+                continue;
+            }
+            day--;
+            System.out.println("У вас осталось " + day + " дней");
         }
 
-        System.out.println("---3 задание---");
-        for (int w = 2; w <= 17; w += 2) {
-            System.out.println(w);
+        System.out.println("---3.1 task---");
+        int budgetB = 500;
+        int prisePerDayB = 100;
+        int totalDayB = budgetB / prisePerDay;
+        int dayB;
+
+        System.out.println("С учетом внесенных средств вы можете оставить машину на парковке на " + totalDayB + " дней");
+
+        for (dayB = 1; budgetB >= prisePerDay; dayB++) {
+            if (dayB % 5 == 0) {
+                System.out.println("Каждый пятый день на парковке бесплатный!");
+                continue;  // пропускаем уменьшение бюджета и сообщение о оставшихся днях
+            }
+            budgetB -= prisePerDay;
+            System.out.println("У вас осталось " + (budgetB / prisePerDayB) + " дней");
         }
 
-        System.out.println("---4 задание---");
-        for (int e = 10; e >= -10; e--) {
-            System.out.println(e);
-        }
+        System.out.println("---4 task---");
+        int needMoney = 12000000;
+        int month = 1;
+        int total = 0;
+        int moneyPerMonth = 15000;
+        while (true) {
+            total = total + moneyPerMonth;
+            month++;
+            if (month % 6 == 0) {
+                total = total + (total / 100 * 7);
+            }
+            if (total >= needMoney) {
+                total = needMoney;
+                System.out.println("За " + month + " месяц вы отложили " + total + " рублей");
+                break;
+            }
+            System.out.println("За " + month + " месяц вы отложили " + total + " рублей");
 
-        System.out.println("---5 задание---");
-        for (int r = 1904; r < 2096; r += 4) {
-            System.out.println(r + " год является високосным");
-        }
-        System.out.println("---6 задание---");
-        for (int t = 7; t < 100; t += 7) {
-            System.out.print(t + " ");
-        }
-        System.out.println();
 
-        System.out.println("---7 задание---");
-        for (int y = 1; y < 515; y *= 2) {
-            System.out.print(y + " ");
         }
-        System.out.println();
-        System.out.println("---8 задание---");
-        int sallary = 29000;
-        int months = 12;
-        int moneyInJar = 0;
-        for (int month = 1; month < months; month++) {
-            moneyInJar = moneyInJar + sallary;
-            System.out.println("Месяц " + month + " сумма накоплений равна " + moneyInJar);
-        }
-        System.out.println("---9 задание---");
-        int sallaryB = 29000;
-        int monthsB = 12;
-        int moneyInBank = 0;
-        for (int month = 0; month < monthsB; month++) {
-            moneyInBank = (moneyInBank + sallaryB) + (moneyInBank / 100 * 12);
-            System.out.println("Месяц " + month + " сумма накоплений равна " + moneyInBank);
-        }
-        System.out.println("---10 задание---");
-        int a = 2;
-        for (int c = 1; c <= 10; c++) {
-            System.out.println(a + "*" + c + "=" + (2 * c));
-        }
+        System.out.println("---4.1 task---");
+        int needMoneyB = 12000000;
+        int monthB = 1;
+        int totalB = 0;
+        int moneyPerMonthB = 15000;
+        do {
+            totalB = totalB + moneyPerMonthB;
+            monthB++;
+            if (monthB % 6 == 0) {
+                totalB = totalB + (totalB / 100 * 7);
+            }
+            if (totalB > needMoneyB) {
+                totalB = needMoneyB;
+                System.out.println("За " + monthB + " месяц вы отложили " + totalB + " рублей");
+                break;
+            }
+            System.out.println("За " + monthB + " месяц вы отложили " + totalB + " рублей");
+
+
+        } while (true);
+
+        System.out.println("---5 task---");
+        int charge = 20;
+        int minute = 0;
+        int overheats = 0;
+        while (charge < 100) {
+            minute++;
+            if (minute > 0 && minute < 60) {
+                charge+=2;
+            }
+            if (minute % 10 == 0) {
+                overheats++;
+                minute += 2;
+                continue;
+            }
+            if (overheats >3){
+                System.out.println("Досрочное завершение заряда - перегрев!");
+                break;
+            }
+
+
+        }System.out.println("Время зарядки составило "+ minute + " минут" + ", уровень зарядки - "+ charge);
+
 
     }
-
-
 }
+
+
+
+
+
 
 
