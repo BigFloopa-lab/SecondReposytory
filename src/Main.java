@@ -36,36 +36,46 @@ public class Main {
         System.out.println("---3 task---");
         int budget = 500;
         int prisePerDay = 100;
-        int totalDay = budget / prisePerDay;
-        int day = budget / prisePerDay;
-        System.out.println("С учетом внесенных средств вы можете отсавить машину на парковке на " + totalDay + " дней");
+        int totalDay = 0;
+        int dayCount = 0;
+
 
         while (budget >= prisePerDay) {
-            totalDay = budget / prisePerDay;
-            budget -= prisePerDay;
-            if (totalDay % 5 == 0) {
-                System.out.println("Каждый пятый день на паркове бесплатный!");
+            dayCount++;
+
+
+            if (dayCount % 5 == 0) {
+                System.out.println("Каждый пятый день на парковке бесплатный!");
+                totalDay++;
                 continue;
+
+            } else {
+                budget -= prisePerDay;
             }
-            day--;
-            System.out.println("У вас осталось " + day + " дней");
+
+            totalDay++;
+            System.out.println("Прошло дней: " + totalDay + ", осталось бюджета: " + budget);
         }
 
+
         System.out.println("---3.1 task---");
+
         int budgetB = 500;
         int prisePerDayB = 100;
-        int totalDayB = budgetB / prisePerDay;
-        int dayB;
+        int totalDayB = 0;
 
-        System.out.println("С учетом внесенных средств вы можете оставить машину на парковке на " + totalDayB + " дней");
+        for (int dayCountB = 1; budgetB >= prisePerDayB; dayCountB++) {
 
-        for (dayB = 1; budgetB >= prisePerDay; dayB++) {
-            if (dayB % 5 == 0) {
+            if (dayCountB % 5 == 0) {
                 System.out.println("Каждый пятый день на парковке бесплатный!");
-                continue;  // пропускаем уменьшение бюджета и сообщение о оставшихся днях
+                totalDayB++;
+                continue;
+            } else {
+                budgetB -= prisePerDayB;
             }
-            budgetB -= prisePerDay;
-            System.out.println("У вас осталось " + (budgetB / prisePerDayB) + " дней");
+
+            totalDayB++;
+            System.out.println("Прошло дней: " + totalDayB + ", осталось бюджета: " + budgetB);
         }
 
         System.out.println("---4 task---");
@@ -115,7 +125,7 @@ public class Main {
         int overheats = 0;
         while (charge < 100) {
             minute++;
-            if (minute > 0 && minute < 60) {
+            if (minute > 0 ) {
                 charge+=2;
             }
             if (minute % 10 == 0) {
