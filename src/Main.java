@@ -39,16 +39,13 @@ public class Main {
         int totalDay = 0;
         int dayCount = 0;
 
-
         while (budget >= prisePerDay) {
             dayCount++;
-
 
             if (dayCount % 5 == 0) {
                 System.out.println("Каждый пятый день на парковке бесплатный!");
                 totalDay++;
                 continue;
-
             } else {
                 budget -= prisePerDay;
             }
@@ -125,14 +122,14 @@ public class Main {
         int overheats = 0;
         while (charge < 100) {
             minute++;
-            if (minute > 0 ) {
-                charge+=2;
-            }
             if (minute % 10 == 0) {
                 overheats++;
                 minute += 2;
                 continue;
             }
+            minute++;
+            charge+=2;
+
             if (overheats >3){
                 System.out.println("Досрочное завершение заряда - перегрев!");
                 break;
