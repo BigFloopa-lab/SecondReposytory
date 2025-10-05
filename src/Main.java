@@ -12,6 +12,8 @@ public class Main {
         drei[2] = 3.2f;
 
         System.out.println("---2 task---");
+        System.out.print(Arrays.toString(fir));
+        System.out.print(Arrays.toString(sec));
         for (int index = 0; index < drei.length; index++) {
             if (index == drei.length) {
                 System.out.println(drei[index]);
@@ -21,21 +23,35 @@ public class Main {
         }
 
         System.out.println("---3 task---");
-        for (int i = drei.length -1; i >=0; i--){
+        for (int i = fir.length - 1; i >= 0; i--) {
+            System.out.print(fir[i]);
+            if (i > 0) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print(" ;");
+        for (int i = sec.length - 1; i >= 0; i--) {
+            System.out.print(sec[i]);
+            if (i > 0) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print(" ;");
+        for (int i = drei.length - 1; i >= 0; i--) {
             System.out.print(drei[i]);
-            if (i >0){
+            if (i > 0) {
                 System.out.print(", ");
             }
         }
         System.out.println("---4 task---");
-        for (int a = 0; a < fir.length; a++){
-            if (fir[a] % 2 != 0){
+        for (int a = 0; a < fir.length; a++) {
+            if (fir[a] % 2 != 0) {
                 fir[a] = fir[a] + 1;
 
             }
 
-        }System.out.println(Arrays.toString(fir));
-
+        }
+        System.out.println(Arrays.toString(fir));
 
 
     }
