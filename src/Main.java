@@ -1,18 +1,16 @@
 public class Main {
 
-    public static void main(String[] args) {
 
+    public static final int CURRENT_YEAR = 2025;
+
+    public static void main(String[] args) {
         System.out.println("--- Проверка високосных годов ---");
         checkLeapYear(2020);
 
-
         System.out.println("\n--- Рекомендации приложений ---");
-
         recommendAppVersion(0, 2014);
 
-
         System.out.println("\n--- Расчет дней доставки ---");
-
         calculateDeliveryDays(10);
         calculateDeliveryDays(35);
         calculateDeliveryDays(75);
@@ -21,10 +19,7 @@ public class Main {
     }
 
     public static void checkLeapYear(int year) {
-
         boolean isLeap = (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0);
-
-
         if (isLeap) {
             System.out.println(year + " год — високосный год");
         } else {
@@ -33,8 +28,7 @@ public class Main {
     }
 
     public static void recommendAppVersion(int clientOS, int clientDeviceYear) {
-        int currentYear = 2024;
-
+        int currentYear = CURRENT_YEAR;
         if (clientOS == 1 && clientDeviceYear >= currentYear) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else if (clientOS == 1 && clientDeviceYear < currentYear) {
@@ -46,10 +40,8 @@ public class Main {
         }
     }
 
-
     public static int calculateDeliveryDays(int deliveryDistance) {
         int deliveryDays = 0;
-
         if (deliveryDistance <= 20) {
             deliveryDays = 1;
         } else if (deliveryDistance <= 60) {
@@ -57,10 +49,9 @@ public class Main {
         } else if (deliveryDistance <= 100) {
             deliveryDays = 3;
         } else {
-            System.out.println("Дистанция: " + deliveryDistance + " км - доставки нет");
+            System.out.println("Потребуется дней: доставки нет");
             return -1;
         }
-
         System.out.println("Потребуется дней: " + deliveryDays);
         return deliveryDays;
     }
