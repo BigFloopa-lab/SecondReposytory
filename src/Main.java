@@ -1,58 +1,20 @@
 public class Main {
-
-
-    public static final int CURRENT_YEAR = 2025;
-
     public static void main(String[] args) {
-        System.out.println("--- Проверка високосных годов ---");
-        checkLeapYear(2020);
+      Author first = new Author("Dmitriy", "Gluhovskiy" );
+        System.out.println("first.name = " + first.name);
+        System.out.println("first.surname = " + first.surname);
 
-        System.out.println("\n--- Рекомендации приложений ---");
-        recommendAppVersion(0, 2014);
+        Book test = new Book("Metro",2014, "D.G" );
+        System.out.println("test.title = " + test.title);
+        test.setAge(2104);
+        System.out.println("test.getAge() = " + test.getAge());
+        System.out.println("test.Author = " + test.Author);
 
-        System.out.println("\n--- Расчет дней доставки ---");
-        calculateDeliveryDays(10);
-        calculateDeliveryDays(35);
-        calculateDeliveryDays(75);
-        calculateDeliveryDays(95);
-        calculateDeliveryDays(120);
-    }
-
-    public static void checkLeapYear(int year) {
-        boolean isLeap = (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0);
-        if (isLeap) {
-            System.out.println(year + " год — високосный год");
-        } else {
-            System.out.println(year + " год — невисокосный год");
-        }
-    }
-
-    public static void recommendAppVersion(int clientOS, int clientDeviceYear) {
-        int currentYear = CURRENT_YEAR;
-        if (clientOS == 1 && clientDeviceYear >= currentYear) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear < currentYear) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (clientOS == 0 && clientDeviceYear >= currentYear) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-        } else if (clientOS == 0 && clientDeviceYear < currentYear) {
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        }
-    }
-
-    public static int calculateDeliveryDays(int deliveryDistance) {
-        int deliveryDays = 0;
-        if (deliveryDistance <= 20) {
-            deliveryDays = 1;
-        } else if (deliveryDistance <= 60) {
-            deliveryDays = 2;
-        } else if (deliveryDistance <= 100) {
-            deliveryDays = 3;
-        } else {
-            System.out.println("Потребуется дней: доставки нет");
-            return -1;
-        }
-        System.out.println("Потребуется дней: " + deliveryDays);
-        return deliveryDays;
+        Book second = new Book("Carols",2013,"L.Swonson");
+        second.setAge(1928);
+        Book third = new Book ("Naming",2133,"SuperAuthor" );
+        System.out.println("second.title = " + second.title);
+        System.out.println("second.age = " + second.age);
+        System.out.println("third.title = " + third.title);
     }
 }
