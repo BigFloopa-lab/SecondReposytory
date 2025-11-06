@@ -1,24 +1,28 @@
+// Класс Book с изменениями
 public class Book {
-String title;
-int age;
-String Author;
+    String title;
+    int age;
+    Author author;
 
-public Book (String title,int age, String Author) {
-    this.title = title;
-    this.age = age;
-    this.Author = Author;
-}
-    public String getTitle(){
-    return this.title;
+    public Book(String title, int age, Author author) {
+        this.title = title;
+        this.age = age;
+        this.author = author;
     }
-    public int getAge(){
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public int getAge() {
         return this.age;
     }
-    public String getAuthor(){
-        return this.Author;
+
+    public Author getAuthor() {
+        return this.author;
     }
-    public void setAge(int age){
-    this.age = age;
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
-
