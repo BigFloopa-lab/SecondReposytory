@@ -1,3 +1,4 @@
+
 public class Main {
     public static void liner() {
         System.out.println("====================");
@@ -5,30 +6,26 @@ public class Main {
 
     public static void main(String[] args) {
         liner();
-        Author first = new Author("Dmitriy", "Gluhovskiy");
-        System.out.println("first.name = " + first.name);
-        System.out.println("first.surname = " + first.surname);
-        Book firstB = new Book("Metro", 2014, first);
-        System.out.println("test.title = " + firstB.title);
-        firstB.setAge(2104);
-        System.out.println("test.getAge() = " + firstB.getAge());
+        Product first = new Product("banana", 22, 24, "fruit");
+        System.out.println(first.toString());
+        Product second = new Product("cucumber", 11,4,"vegetables");
+        System.out.println(second.toString());
+        System.out.println("Cравнениe первого со вторым - "+ first.equals(second));
         liner();
-        Author second = new Author("Fabian", "Lewingston");
-        Book secondB = new Book("Tails", 2012, second);
-        secondB.setAge(1928);
-        System.out.println("secondB.title = " + secondB.title);
-        System.out.println("secondB.age = " + secondB.age);
-        System.out.println("secondB.author.name = " + secondB.getAuthor().getName());
-        System.out.println("secondB.author.surname = " + secondB.getAuthor().getSurname());
+        Product third = new Product("apple",1,1,"fruit");
+        System.out.println(third.toString());
+        Product fourths = new Product("apple",1,1,"fruit");
+        System.out.println(fourths.toString());
+        System.out.println("Сравнение третьего с четвертым - " + third.equals(fourths));
         liner();
-        Author third = new Author("George", "Floid");
-        Book thirdB = new Book("Fow to breth", 2020, third);
-        thirdB.setAge(2021);
-        System.out.println("thirdB.title  = " + thirdB.title);
-        System.out.println("thirdB.age = " + thirdB.getAge());
-        System.out.println("thirdB.name = " + thirdB.getAuthor().name);
-        System.out.println("thirdB.surname = " + thirdB.getAuthor().surname);
+        Product [] basket1 = {first, third};
+        Product [] basket2 = {first, second};
+        Order order1 = new Order("John", basket1);
+        Order order2 = new Order("George", basket2);
+        System.out.println(order1);
+        System.out.println("Сравнение первого и второго заказа: " + order1.equals(order2));
 
 
     }
+
 }
