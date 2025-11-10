@@ -19,10 +19,14 @@ public class Product {
     }
 
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false; // проверить null и класс
-        Product product = (Product) o; // приведение к классу Product
-        return id == product.id && Objects.equals(category, product.category); // сравнение id и category
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Product product = (Product) o;
+        return id == product.id && Objects.equals(category, product.category);
     }
 
 

@@ -25,7 +25,6 @@ public class Main {
         System.out.println(order1);
         System.out.println("Сравнение первого и второго заказа: " + order1.equals(order2));
 
-
     }
 
 }
