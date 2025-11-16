@@ -1,30 +1,25 @@
 
 public class Main {
-    public static void liner() {
-        System.out.println("====================");
-    }
-
     public static void main(String[] args) {
-        liner();
-        Product first = new Product("banana", 22, 24, "fruit");
-        System.out.println(first.toString());
-        Product second = new Product("cucumber", 11,4,"vegetables");
-        System.out.println(second.toString());
-        System.out.println("Cравнениe первого со вторым - "+ first.equals(second));
-        liner();
-        Product third = new Product("apple",1,1,"fruit");
-        System.out.println(third.toString());
-        Product fourths = new Product("apple",1,1,"fruit");
-        System.out.println(fourths.toString());
-        System.out.println("Сравнение третьего с четвертым - " + third.equals(fourths));
-        liner();
-        Product [] basket1 = {first, third};
-        Product [] basket2 = {first, second};
-        Order order1 = new Order("John", basket1);
-        Order order2 = new Order("George", basket2);
-        System.out.println(order1);
-        System.out.println("Сравнение первого и второго заказа: " + order1.equals(order2));
+        Employee first = new Employee("ivan", "ivanov", "ivanovich", 1, 1, 500);
+        System.out.println(first);
+        Employee second = new Employee("Larisa", "ivanova", "Shtern", 2, 1, 422);
+        System.out.println(second);
+        Employee third = new Employee("George", "kirilovich", "floyd", 3, 1, 212);
+        System.out.println(third);
+        Employee forth = new Employee("Lana", "Jacobson", "Rose", 2, 1, 312);
+        System.out.println(forth.printShortInfo());
+        EmployeeBook book = new EmployeeBook();
+        book.addEmployee(0, new Employee("Ivan", "Ivanov", "Ivanovich", 1, 1, 50000));
+        EmployeeBook books = new EmployeeBook();
 
+        for (int i = 1; i <= 11; i++) {
+            Employee emp = new Employee("Name" + i, "Surname" + i, "Patronymic" + i, i % 5 + 1, i, 1000 * i);
+            boolean added = books.addEmployeeFirstFree(emp);
+            System.out.println("Добавление сотрудника " + i + ": " + (added ? "успешно" : "не удалось (массив полный)"));
+        }
     }
-
 }
+
+
+
